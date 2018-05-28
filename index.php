@@ -11,31 +11,31 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
 <div id="panel">
   <main>
     <section id="hero">
-
+      <?php //include_once "p/partials/hero.php"; ?>
     </section>
     <section id="semblanza">
-
+      <?php include_once "p/partials/s_semblanza.php"; ?>
     </section>
     <section id="compromisos">
-
+      <?php include_once "p/partials/s_compromisos.php"; ?>
     </section>
     <section id="redes">
 
     </section>
     <section id="decalogo">
-
+      <?php include_once "p/partials/s_decalogo.php"; ?>
     </section>
     <section id="galeria">
-
+      <?php include_once "p/components/galeria.php"; ?>
     </section>
     <section id="audios">
-
+      <?php //include_once "p/partials/audios.php"; ?>
     </section>
     <section id="registro">
-
+      <?php include_once "p/components/forma_registro.php"; ?>
     </section>
   </main>
-  <footer></footer>
+  <? include_once "p/partials/foot.php"; ?>
 </div>
 </body>
 <?php include_once "p/services/scripts.php"; ?>
