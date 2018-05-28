@@ -1,2 +1,11 @@
+@import "core/basics";
 @import "core/normalize";
 @import "core/skeleton";
+@import "core/variables";
+
+@import "components/animate/animate";
+@import "components/main_menu";
+@import "components/unslider";
+@import "components/preloader";
+
+@import "content/globals";

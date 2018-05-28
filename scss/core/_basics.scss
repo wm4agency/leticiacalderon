@@ -1,0 +1,67 @@
+@import "functions";
+
+$small:300px;
+$medium:650px;
+$large:960px;
+$content-area-max:1280px;
+$m_w_small:350px;
+$m_w_medium:400px;
+$m_w_large:760px;
+$m_w_pro:980px;
+$m_h_small:570px;
+$m_h_medium:700px;
+$m_h_large:800px;
+$m_h_pro:1300px;
+
+%proofing{
+  border: 1px dotted whitesmoke;
+  background:transparentize(crimson, .95);
+}
+
+
+@media (min-width:$small){
+  html,body{
+    width: 100%!important;
+    width: 100vw!important;
+    height: 100%!important;
+    height: 100vh!important;
+    body{animation: small 0.001s;}
+  }
+}
+
+
+@media (min-width:$large){
+  body{animation: large 0.001s;}
+    button.hamburger{display:none!important;}
+}
+
+@keyframes small{
+  from { clip: rect(1px, auto, auto, auto); }
+  to { clip: rect(0px, auto, auto, auto); }
+}
+
+@keyframes large {
+  from { clip: rect(1px, auto, auto, auto); }
+  to { clip: rect(0px, auto, auto, auto); }
+}
+
+@mixin circle($size: 100px) {
+	width: $size;
+	height: $size;
+  position: relative;
+
+	-webkit-border-radius: $size / 2 + 0px;
+	-moz-border-radius: $size / 2 + 0px;
+	border-radius: $size / 2 + 0px;
+
+  & > div, span, article, figure {
+    width: $size - $size*0.3;
+    height: $size - $size*0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%,50%);
+    margin: auto;
+    text-align: center;
+  }
+}

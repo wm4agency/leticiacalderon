@@ -1,0 +1,9 @@
+footer{
+  background-color: $dark;
+  .astudillo{
+    margin: 3em auto;
+    @media(min-width: $medium){
+      width: 50%;
+    }
+  }
+}

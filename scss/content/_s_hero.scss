@@ -1,0 +1,121 @@
+header#hero{
+    height: 100%;
+    height: 100vh;
+    background-color: $a_warm_grey ;
+    background-image:linear-gradient(to bottom right, $a_warm_grey, $w) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media (min-width: $large){
+      height: 80%;
+      height: 80vh;
+    }
+
+    .container{
+      height: 100%;
+      width: 100%;
+    }
+
+    .ricardo{
+      height: 100%;
+      width: 100%;
+      background-image:  url(../images/RicardoAstudillo_frontal_opt.png);
+      background-repeat: no-repeat;
+      background-position: bottom left calc(100% + 150px);
+      background-size: auto 90%;
+      //background-size: contain;
+      //background-attachment: fixed;
+      //background-color: crimson;
+      position: absolute;
+      margin: 0;
+      z-index: 10;
+      bottom: 0;
+      @include fadeInRight();
+
+      @media (min-height: 730px){
+        background-position: bottom left calc(100% + 215px);
+      }
+
+      @media (min-width: $large){
+        //height: 80%;
+        //height: 80vh;
+        background-attachment: fixed;
+        background-size: auto 70%;
+        background-position: bottom right;
+        background-position: bottom 17vh right 47%;
+        background-image:  url(../images/RicardoAstudillo_Brazos-abiertos.png);
+      }
+    }
+
+    .astudillo{
+      @include astudillo();
+      width: 90%;
+      right: auto;
+      left: auto;
+      position: absolute;
+      top: 20px;
+      @include fadeInLeft();
+
+      @media (min-height: 730px){
+        width: 90%;
+        top: 20px;
+      }
+
+      @media (min-width: $large){
+        width: 35%;
+        height: auto;
+        margin: 0 auto;
+        top:auto;
+        bottom: 20px;
+        transform: none;
+      }
+    }
+
+    .logos{
+      width: 65%;
+      left: 1em;
+      position: absolute;
+      bottom: 0;
+      height: 60%;
+      height: 60vh;
+
+      @media (min-width: $large){
+        width: 100%;
+      }
+    }
+
+    .corregidora{
+      width: 85%;
+      margin: 0 auto;
+      display: block;
+      @include fadeIn();
+
+      @media (min-width: $large){
+        width: 60%;
+        margin: 0 auto;
+      }
+
+    }
+
+    div.coalicion{
+      width: 70%;
+      display: block;
+      margin: 0 auto;
+      bottom: 25px;
+      position: absolute;
+      z-index: 11;
+      @include fadeInLeft();
+
+      &.partidoswrapp>figure{
+        width: 47.5%;
+        float: left;
+        &:first-child{margin-right: 5%}
+      }
+
+      @media (min-width: $large ){
+        width: 15%;
+        right: 0;
+        bottom: 30px;
+      }
+    }
+  }
