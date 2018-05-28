@@ -16,14 +16,13 @@ aside#slidding_menu, div#panel{
       background-color: transparent;
   }
   &::-webkit-scrollbar-thumb {
-      background-color: $a_green;
+      background-color: $lc_green;
       border: none;
   }
 }
 
 aside#slidding_menu{
-    background-color: $a_grey;
-    //@include astudilloAbst($action-color);
+    background-color: $lc_grey;
     background-size: 200%;
     position: fixed;
     height: 100%;
@@ -33,14 +32,8 @@ aside#slidding_menu{
     z-index: 0;
 
     //button.hamburger{color: $w;}
-    i.burger::after{@include burger($a_green);}
+    i.burger::after{@include burger($lc_green);}
 
-    .astudillo{
-      @include astudillo($a_green,$a_green_dark,$w,$w);
-      width: 100%;
-      margin: 0 auto 3em auto;
-
-    }
     nav{
         position: absolute;
         width: 90%;
@@ -66,7 +59,7 @@ aside#slidding_menu{
         }
 
         ul.sociales {
-          a{color: $a_green;}
+          a{color: $lc_green;}
           &::after{color: $dark;}
         }
     }
@@ -103,7 +96,7 @@ aside#slidding_menu{
             padding: 0 .5em;
 
             //&:last-child{margin-right: 0;}
-            &:hover{cursor: pointer;color: $a_green_dark;border-bottom: 1px solid $a_green_dark;}
+            &:hover{cursor: pointer;color: $lc_green_dark;border-bottom: 1px solid $lc_green_dark;}
           }
         }
 
@@ -117,7 +110,7 @@ aside#slidding_menu{
           li {
             margin:0;
           }
-          a{color: $a_green_dark;}
+          a{color: $lc_green_dark;}
         }
       }
     }

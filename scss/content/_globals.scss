@@ -23,7 +23,7 @@ i.burger{
   z-index: 999;
   display: block;
   touch-action: none;
-  color: $a_green;
+  color: $lc_green;
   border: none;
   outline: 0;
 
@@ -48,7 +48,7 @@ ul.sociales {
   a{
     font-size: 1.25em;
     line-height: 1em;
-    color: $a_green_dark;
+    color: $lc_green_dark;
     padding:.125em;
     margin: 0;
     text-decoration: none;
@@ -62,7 +62,7 @@ ul.sociales {
     font-weight: 400;
     bottom: -30%;
     font-size: 1.25rem;
-    color: $a_grey;
+    color: $lc_grey;
     margin-top: -.5em;
   }
 }
@@ -126,7 +126,7 @@ button.hamburger{
   z-index: 999;
   display: block;
   touch-action: none;
-  color: $a_grey;
+  color: $lc_grey;
 
   &:hover{@include bounce();}
 }

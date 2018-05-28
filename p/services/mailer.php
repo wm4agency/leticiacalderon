@@ -29,15 +29,15 @@ $date = date('l, M d, Y / h:i:s a', time());
 //  set content-type
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8". "\r\n";
-$headers .= 'From: ricardoastudillo.info<no-reply@ricardoastudillo.info>'. "\r\n";
+$headers .= 'From: leticiacalderon.info<no-reply@leticiacalderon.info>'. "\r\n";
 
 //plantilla de correo de acuerdo al tipo de forma registrado
 switch($cat){
     case "buzon":
-        $to = "=?UTF-8?B?".base64_encode('Contacto Ciudadano')."?=".'<contacto@ricardoastudillo.info>';
+        $to = "=?UTF-8?B?".base64_encode('Contacto Ciudadano')."?=".'<contacto@leticiacalderon.info>';
         $recipients = "oscar@wm4.mx,mmonroy.lan@gmail.com,pepemolinatorres@gmail.com,grubicamargo@gmail.com";
         //$recipients = "oscar@wm4.mx";
-        $subject = "=?UTF-8?B?".base64_encode('Nuevo registro en Buzón Ciudadano - ricardoastudillo.info')."?=";
+        $subject = "=?UTF-8?B?".base64_encode('Nuevo registro en Buzón Ciudadano - leticiacalderon.info')."?=";
         $headers .= 'BCC: '.$recipients.' '. "\r\n";
 
         require_once ("../mailings/mail_inbound_buzon.php");
@@ -48,7 +48,7 @@ switch($cat){
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8". "\r\n";
-            $headers .= 'From: Ricardo Astudillo<contacto@ricardoastudillo.info>'. "\r\n";
+            $headers .= 'From: Leticia Calderón<contacto@leticiacalderon.info>'. "\r\n";
             $headers .= 'to: '.$to.' '. "\r\n";
 
             if (mail($to,$subject,$message,$headers)){
@@ -66,10 +66,10 @@ switch($cat){
         }
         break;
     case "registro":
-        $to = "=?UTF-8?B?".base64_encode('Equipo Astudillo')."?=".'<contacto@ricardoastudillo.info>';
+        $to = "=?UTF-8?B?".base64_encode('Equipo Leticia Calderón')."?=".'<contacto@leticiacalderon.info>';
         $recipients = "oscar@wm4.mx,mmonroy.lan@gmail.com,pepemolinatorres@gmail.com,grubicamargo@gmail.com";
         //$recipients = "oscar@wm4.mx";
-        $subject = "=?UTF-8?B?".base64_encode('Registro de colaborador - ricardoastudillo.info')."?=";
+        $subject = "=?UTF-8?B?".base64_encode('Registro de colaborador - leticiacalderon.info')."?=";
         $headers .= 'BCC: '.$recipients.' '. "\r\n";
 
 
@@ -77,13 +77,13 @@ switch($cat){
         if (mail($to,$subject,$message,$headers)){
 
             $to = "=?UTF-8?B?".base64_encode($nombre)."?=".'<'.$correo.'>';
-            $from = "=?UTF-8?B?".base64_encode('Contacto Ciudadano')."?=".'<contacto@ricardoastudillo.info>';
+            $from = "=?UTF-8?B?".base64_encode('Contacto Ciudadano')."?=".'<contacto@leticiacalderon.info>';
             $subject = "Gracias por por registrarte,";
             require_once ("../mailings/mail_onboarding.php");
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8". "\r\n";
-            $headers .= 'From: Ricardo Astudillo<contacto@ricardoastudillo.info>'. "\r\n";
+            $headers .= 'From: Leticia Calderón<contacto@leticiacalderon.info>'. "\r\n";
             $headers .= 'to: '.$to.' '. "\r\n";
 
             if (mail($to,$subject,$message,$headers)){

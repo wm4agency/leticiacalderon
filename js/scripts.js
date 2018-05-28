@@ -107,14 +107,14 @@ function socialFeedInit(){
   $('.social-feed-container').socialfeed({
     // FACEBOOK
     facebook:{
-        accounts: ['@astudilloqro'],  //Array: Specify a list of accounts from which to pull wall posts
+        accounts: ['@leticiaCalderonR'],  //Array: Specify a list of accounts from which to pull wall posts
         limit: 2,                                   //Integer: max number of posts to load
         access_token: '167165777296908|0_gajIP189C4Zz9TrIt80oywol8'  //String: "APP_ID|APP_SECRET"
     },
 
     // TWITTER
     twitter:{
-        accounts: ['@astudilloqro'],                       //Array: Specify a list of accounts from which to pull tweets
+        accounts: ['@leticiaCalderonR'],                       //Array: Specify a list of accounts from which to pull tweets
         limit: 2,                                    //Integer: max number of tweets to load
         consumer_key: 'YOUR_CONSUMER_KEY',           //String: consumer key. make sure to have your app read-only
         consumer_secret: 'YOUR_CONSUMER_SECRET_KEY', //String: consumer secret key. make sure to have your app read-only
@@ -123,7 +123,7 @@ function socialFeedInit(){
 
     // INSTAGRAM
     instagram:{
-        accounts: ['@astudilloqro'],  //Array: Specify a list of accounts from which to pull posts
+        accounts: ['@leticiaCalderonR'],  //Array: Specify a list of accounts from which to pull posts
         limit: 2,                                   //Integer: max number of posts to load
         client_id: 'YOUR_INSTAGRAM_CLIENT_ID',       //String: Instagram client id (option if using access token)
         access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' //String: Instagram access token

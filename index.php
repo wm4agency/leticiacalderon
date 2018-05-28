@@ -26,13 +26,13 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
       <?php include_once "p/partials/s_decalogo.php"; ?>
     </section>
     <section id="galeria">
-      <?php include_once "p/components/galeria.php"; ?>
+      <div class="galeria"></div>
     </section>
     <section id="audios">
       <?php //include_once "p/partials/audios.php"; ?>
     </section>
     <section id="registro">
-      <?php include_once "p/components/forma_registro.php"; ?>
+      <div class="container"><?php include_once "p/components/forma_registro.php"; ?></div>
     </section>
   </main>
   <? include_once "p/partials/foot.php"; ?>
