@@ -1,0 +1,72 @@
+section#compromisos{
+  @extend %lowPoliBack;
+  color: $w;
+  padding: 1.5em 0;
+
+  h1{
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  ol{
+    list-style: none;
+    counter-reset: li;
+
+    &>li {
+      counter-increment: li;
+      position: relative;
+      border-bottom: 1px solid $lc_green_dark;
+      padding-bottom: 1.25rem;
+
+      &::before{
+        content: counter(li);
+        display: block;
+        position: absolute;
+        left: 0;
+        background-color: $w;
+        color: $lc_green_dark;
+        padding: 1rem;
+        border-radius: 2rem;
+        line-height: .75rem;
+        font-weight: 800;
+      }
+
+      article{
+        h2{
+          padding-left: 3.5rem;
+          font-size: 1.25rem;
+          @extend %helvetica;
+          font-weight: 100;
+          margin-bottom: .25rem;
+          line-height: 1.5rem;
+          letter-spacing: .0125rem;
+          display: inline-block;
+          font-weight: normal;
+        }
+
+        ul{
+          margin: 0 .5rem 0 2rem;
+          padding-left: 1.5rem;
+          height: 30rem;
+          transition: height .5s;
+          display: block;
+          overflow-y: scroll;
+          &.hidden{height: 0;}
+        }
+
+        li{
+          line-height: 1.25rem;
+          font-size: 1.125rem;
+          @extend %helvetica;
+          color: $darkest;
+          list-style-position: outside;
+          list-style-type: disc;
+          font-weight: normal;
+
+          &:fist-child{margin-top: 1rem;}
+          &:last-child{margin-bottom: 2.5rem;}
+        }
+      }
+    }
+  }
+}

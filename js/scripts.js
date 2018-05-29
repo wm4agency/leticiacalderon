@@ -7,7 +7,7 @@ $(document).ready(function($){
 });
 
 var panel = document.getElementById('panel');
-var galeria = document.getElementById('galeria');
+var galeria = document.getElementsByClassName('galeria')[0];
 
 function mediaQueryBind() {
   document.addEventListener('animationend', function(event){
@@ -43,7 +43,7 @@ function delegateEvents(){
     document.addEventListener('click', function (event) {
         var e = event.target;
         //e.preventDefault
-        console.log(e);
+        //console.log(e);
 
         if (e.classList.contains( "m-nav-toggler" ) ) { // botones en formas de contacto
             e.preventDefault;
@@ -61,6 +61,38 @@ function delegateEvents(){
             //console.log(e);
             navegar(e);
           }
+        else if($(e).parents().hasClass('accordion')){
+          //console.log("accordion sibbling toggler");
+          var parent = findAncestor(e,"accordion"),
+              granpa = findAncestor(parent,"container"),
+              contentNodes = granpa.getElementsByClassName('content'),
+              content = parent.getElementsByClassName('content')[0],
+              el;
+
+          if(content.classList.contains('hidden')){
+            for(i=0; i<contentNodes.length;i++){
+              contentNodes[i].classList.add('hidden');
+            }
+            content.classList.toggle("hidden");
+          }
+          else {content.classList.add("hidden");}
+          console.log(granpa);
+        }
+        else if($(e).children().hasClass('accordion')){
+          //console.log("accordion parent toggler");
+          var content = e.getElementsByClassName('content')[0],
+              granpa = findAncestor(e,"container"),
+              contentNodes = granpa.getElementsByClassName('content');
+
+          if(content.classList.contains('hidden')){
+            for(i=0; i<contentNodes.length;i++){
+              contentNodes[i].classList.add('hidden');
+            }
+            content.classList.toggle("hidden");
+          }
+          else {content.classList.add("hidden");}
+
+        }
 
     }, false);
 }
@@ -208,4 +240,14 @@ function galeryInit(){
     content+="<a href='#'> <figure> <figcaption> </figcaption> </figure> </a>";
   }
   $(galeria).html(content)
+}
+
+
+function findAncestor (el, cls) {
+    while ((el = el.parentElement) && !el.classList.contains(cls));
+    return el;
+}
+function findDescendant (el, cls) {
+    while ((el = el.childElements) && !el.classList.contains(cls));
+    return el;
 }

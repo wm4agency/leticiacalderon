@@ -1,8 +1,8 @@
 header#hero{
     height: 100%;
     height: 100vh;
-    background-color: $lc_warm_grey ;
-    background-image:linear-gradient(to bottom right, $lc_warm_grey, $w) no-repeat center center;
+    background-color: $lc_grey ;
+    background-image:linear-gradient(to bottom right, $lc_grey, $w) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 
@@ -16,7 +16,7 @@ header#hero{
       width: 100%;
     }
 
-    .ricardo{
+    .leticia{
       height: 100%;
       width: 100%;
       background-image:  url(../images/RicardoAstudillo_frontal_opt.png);
@@ -47,75 +47,5 @@ header#hero{
       }
     }
 
-    .astudillo{
-      @include astudillo();
-      width: 90%;
-      right: auto;
-      left: auto;
-      position: absolute;
-      top: 20px;
-      @include fadeInLeft();
 
-      @media (min-height: 730px){
-        width: 90%;
-        top: 20px;
-      }
-
-      @media (min-width: $large){
-        width: 35%;
-        height: auto;
-        margin: 0 auto;
-        top:auto;
-        bottom: 20px;
-        transform: none;
-      }
-    }
-
-    .logos{
-      width: 65%;
-      left: 1em;
-      position: absolute;
-      bottom: 0;
-      height: 60%;
-      height: 60vh;
-
-      @media (min-width: $large){
-        width: 100%;
-      }
-    }
-
-    .corregidora{
-      width: 85%;
-      margin: 0 auto;
-      display: block;
-      @include fadeIn();
-
-      @media (min-width: $large){
-        width: 60%;
-        margin: 0 auto;
-      }
-
-    }
-
-    div.coalicion{
-      width: 70%;
-      display: block;
-      margin: 0 auto;
-      bottom: 25px;
-      position: absolute;
-      z-index: 11;
-      @include fadeInLeft();
-
-      &.partidoswrapp>figure{
-        width: 47.5%;
-        float: left;
-        &:first-child{margin-right: 5%}
-      }
-
-      @media (min-width: $large ){
-        width: 15%;
-        right: 0;
-        bottom: 30px;
-      }
-    }
   }

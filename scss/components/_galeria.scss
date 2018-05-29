@@ -1,0 +1,14 @@
+div.galeria{
+  position: relative;
+  margin: 0 auto;
+  figure{
+    @include img_sprite(100%);
+    background: $dark;
+    border: 1px dotted $darkest;
+    display: block;
+    width: 49%;
+    display: block;
+    float: left;
+    overflow: hidden;
+  }
+}

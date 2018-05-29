@@ -1,0 +1,33 @@
+section#semblanza{
+  li{
+    list-style: none;
+  }
+  ul li {
+    ul{margin: 0;}
+    li{
+      line-height: 1.65rem;
+      padding-left: 1.5rem;
+      font-weight: 500;
+
+      &::first-letter{
+        background:$lc_red;
+        color:$w;
+        font-family: $helvetica;
+        font-weight: 600;
+        padding: 0 .35rem;
+        margin-right: .125rem;
+        border-radius: 1px;
+      }
+
+      &:last-child{
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  ul h2{
+    color: $lc_green;
+    margin-bottom: 1.25rem;
+    line-height: 3.25rem;
+  }
+}

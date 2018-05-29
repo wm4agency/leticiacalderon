@@ -29,7 +29,7 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
       <div class="galeria"></div>
     </section>
     <section id="audios">
-      <?php //include_once "p/partials/audios.php"; ?>
+      <?php include_once "p/components/audio_player.php"; ?>
     </section>
     <section id="registro">
       <div class="container"><?php include_once "p/components/forma_registro.php"; ?></div>

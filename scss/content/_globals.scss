@@ -6,6 +6,7 @@ html {
 body{
   overflow-y: scroll;
   font-weight: 100;
+  color: $dark;
   @media(min-width: $large){
     font-family: $helvetica;
   }
