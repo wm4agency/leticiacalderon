@@ -1,7 +1,9 @@
 body{
   overflow-y: scroll;
-  font-family: $gotham;
-  font-weight: 200;
+  font-weight: 100;
+  @media(min-width: $large){
+    font-family: $helvetica;
+  }
 }
 
 .container{
@@ -54,16 +56,6 @@ ul.sociales {
     text-decoration: none;
 
     &:hover, &:active{cursor: pointer;color: $dark;}
-  }
-
-  &::after{
-    content: "@astudilloqro";
-    display: block;
-    font-weight: 400;
-    bottom: -30%;
-    font-size: 1.25rem;
-    color: $lc_grey;
-    margin-top: -.5em;
   }
 }
 
@@ -131,46 +123,6 @@ button.hamburger{
   &:hover{@include bounce();}
 }
 
-button.arrow,
-input[type="submit"].arrow,
-input[type="reset"].arrow,
-input[type="button"].arrow, form button[type="submit"] {
-  @include img_sprite(1em);
-  border: none;
-  text-align: right;
-  float: right;
-  font-size: 1em;
-  padding-right: 1.15em;
-  color: $a-green;
-
-  &::after{
-    background: no-repeat center center;
-    @include a_arrow($a-green);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    height: auto;
-    width: .95em;
-    transform: translateY(-50%);
-  }
-}
-
-.metropol{
-  @include img_sprite_pre(11%);
-  color:transparent;
-  position: relative;
-  padding-left: 0;
-  &::before{
-    @include metropol($w);
-    width: 100%;
-    margin: 0;
-    background-size: 100%;
-    padding-left: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-39%);
-  }
-}
 
 input[type].required::placeholder{
   color: crimson;
@@ -185,72 +137,4 @@ form .error_message{color: $warning_orange;}
   left: -300%;
   font-size: .5em;
   z-index: -1;
-}
-
-.astudillo{
-  @include img_sprite();
-  @include astudillo();
-  background-size: contain;
-  overflow: hidden;
-  width: 70%;
-  height: auto;
-  @include fadeIn();
-
-  &::after{padding-bottom: 38%;}
-
-  h1,h2,h3{@extend %textImgSwap;}
-}
-
-.corregidora{
-  @include img_sprite();
-  @include corregidora();
-  background-size: contain;
-  overflow: hidden;
-  width: 50%;
-  height: auto;
-  &::after{padding-bottom: 50%;}
-
-  h1,h2,h3,h4{@extend %textImgSwap;}
-}
-
-.partidoswrapp,.flechaswrapp{width: 48%;display: inline-block;}
-.pri{
-  @include img_sprite();
-  background-image: $pri;
-  background-size: contain;
-  overflow: hidden;
-  width: 47%;
-  height: auto;
-  margin: 0;
-  margin-right: 1%;
-  float: left;
-
-  &::after{padding-bottom: 100%;}
-
-  h5{@extend %textImgSwap;}
-}
-
-.verde{
-  @include img_sprite();
-  background-image: $partidoverde;
-  background-size: contain;
-  overflow: hidden;
-  width: 49%;
-  height: auto;
-  margin:0;
-  float: left;
-
-  &::after{padding-bottom: 100%;}
-
-  h5{@extend %textImgSwap;}
-}
-
-.flechas_coalicion{
-  @include img_sprite();
-  @include flechas_coalicion();
-  background-size: contain;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  &::after{padding-bottom: 48%;}
 }

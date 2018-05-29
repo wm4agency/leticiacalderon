@@ -16,37 +16,6 @@ $warning_orange: #f7931e;
   .foo{};
 }
 
-@font-face {
-    font-family: 'Gotham';
-    src: url('fonts/Gotham-Bold.woff2') format('woff2'),
-        url('Gotham-Bold.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gotham';
-    src: url('fonts/Gotham-Book.woff2') format('woff2'),
-        url('fonts/Gotham-Book.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gotham';
-    src: url('fonts/Gotham-Light.woff2') format('woff2'),
-        url('fonts/Gotham-Light.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gotham';
-    src: url('fonts/Gotham-Black.woff2') format('woff2'),
-        url('fonts/Gotham-Black.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-$gotham:"Gotham","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 // highlight
 ::selection { background:$action-color; color:$w; text-shadow:none; font-weight: 100; }
 ::-moz-selection { background:$action-color; color:$w; text-shadow:none }
@@ -89,24 +58,8 @@ $gotham:"Gotham","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpath class='st0' d='M17.9 111.6c-5.2 0-9.5-1.7-12.8-5S0 99 0 93.8V49.1c0-5.2 1.7-9.5 5-12.8s7.6-5 12.8-5h464.3c5.2 0 9.5 1.7 12.8 5 3.3 3.3 5 7.6 5 12.8v44.6c0 5.2-1.7 9.5-5 12.8 -3.3 3.3-7.6 5-12.8 5H17.9zM17.9 290.2c-5.2 0-9.5-1.7-12.8-5 -3.3-3.3-5-7.6-5-12.8v-44.6c0-5.2 1.7-9.5 5-12.8 3.3-3.3 7.6-5 12.8-5h464.3c5.2 0 9.5 1.7 12.8 5 3.3 3.3 5 7.6 5 12.8v44.6c0 5.2-1.7 9.5-5 12.8 -3.3 3.3-7.6 5-12.8 5H17.9zM17.9 468.7c-5.2 0-9.5-1.7-12.8-5 -3.3-3.3-5-7.6-5-12.8v-44.6c0-5.2 1.7-9.5 5-12.8 3.3-3.3 7.6-5 12.8-5h464.3c5.2 0 9.5 1.7 12.8 5 3.3 3.3 5 7.6 5 12.8v44.6c0 5.2-1.7 9.5-5 12.8 -3.3 3.3-7.6 5-12.8 5H17.9z'/%3E%3C/svg%3E");
 }
 
-@mixin metropol($color:$darkest){
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 212.8'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpath class='st0' d='M0.9 0h95.4c3 4 13.4 22.1 31.1 54.1l28.4 50h0.5L215.1 0h95.4l0.9 0.9v211l-0.9 0.9h-76.5l-0.9-0.9V109.7h-0.5l-58.5 103.2h-36c-2-2.1-16.3-27.1-42.8-75l-16.7-28.2v102.3l-0.9 0.9h-77L0 211.9V0.9L0.9 0z'/%3E%3Cpath class='st0' d='M318.4 0h194.9l0.9 0.9v44l-0.9 0.9h-117v27.8h108l0.9 0.9v50l-0.9 0.9h-108V161h117l0.9 0.9v50l-0.9 0.9H318.4l-0.9-0.9V0.9L318.4 0z'/%3E%3Cpath class='st0' d='M520.7 0h235.9l0.9 0.9v44l-0.9 0.9h-78.3v166.1l-0.9 0.9h-77l-0.9-0.9V45.8h-78.8l-0.9-0.9v-44L520.7 0z'/%3E%3Cpath class='st0' d='M764.1 0H950c15.6 0 28.2 6.5 37.8 19.4 4.8 6.9 7.2 17.1 7.2 30.5v39.8c0 23.8-11.1 39.6-33.3 47.7v0.5l43.7 74 -0.9 0.9h-81c-2-2.2-16.4-26.5-43.2-72.6l-0.5-0.5h-36.9l-0.9 0.9v71.3l-0.9 0.9h-77l-0.9-0.9V0.9L764.1 0zM842.4 52.7V87h69.3c8.3 0 13.4-3.1 15.3-9.3V62c0-4.8-4.7-7.9-14-9.3H842.4z'/%3E%3Cpath class='st0' d='M1070.1 0h111.6c17.3 0 33.1 7.7 47.3 23.1 7.8 10.3 11.7 19.8 11.7 28.7v107.8c0 16.4-9.3 30.9-27.9 43.5 -10.4 6.5-23.3 9.7-38.7 9.7h-96.3c-31.1 0-52.6-13.3-64.4-39.8 -1.8-6.4-2.7-12.9-2.7-19.4V58.8c0-27.5 14.9-46.3 44.6-56.5C1060.7 0.8 1065.6 0 1070.1 0zM1091.2 66.2v74.5c0 11 3.3 17.8 9.9 20.4h47.7c6.8 0 10.7-6.3 11.7-19V66.2c0-13.6-4.4-20.4-13.1-20.4h-43.2C1095.6 45.8 1091.2 52.6 1091.2 66.2z'/%3E%3Cpath class='st0' d='M1247.3 0h185.9c17.7 0 31.2 8 40.5 24.1 2.7 6.7 4.1 12.3 4.1 16.7v55.1c0 14.9-7.5 27.2-22.5 37 -8.5 4.6-17 6.9-25.7 6.9h-103.5l-0.9 0.9v71.3l-0.9 0.9h-77l-0.9-0.9V0.9L1247.3 0zM1325.7 52.7V87h69.3c8.3 0 13.4-3.1 15.3-9.3V62c0-4.8-4.7-7.9-14-9.3H1325.7z'/%3E%3Cpath class='st0' d='M1543.3 0H1655c17.3 0 33.1 7.7 47.3 23.1 7.8 10.3 11.7 19.8 11.7 28.7v107.8c0 16.4-9.3 30.9-27.9 43.5 -10.4 6.5-23.3 9.7-38.7 9.7H1551c-31.1 0-52.6-13.3-64.4-39.8 -1.8-6.4-2.7-12.9-2.7-19.4V58.8c0-27.5 14.9-46.3 44.6-56.5C1534 0.8 1538.9 0 1543.3 0zM1564.5 66.2v74.5c0 11 3.3 17.8 9.9 20.4h47.7c6.8 0 10.7-6.3 11.7-19V66.2c0-13.6-4.4-20.4-13.1-20.4h-43.2C1568.8 45.8 1564.5 52.6 1564.5 66.2z'/%3E%3Cpath class='st0' d='M1720.6 0h77l0.9 0.9V161h120.6l0.9 0.9v50l-0.9 0.9h-198.5l-0.9-0.9V0.9L1720.6 0z'/%3E%3C/svg%3E ");
-}
-
 @mixin arrow($color:#000){
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .arrow%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpath class='arrow' d='M121.7 66.6c0-4 1.8-7.5 4.4-10.1l22-22c2.6-2.6 6.6-4.4 10.1-4.4 3.5 0 7.5 1.8 10.1 4.4l205.5 205.5c2.6 2.6 4.4 6.6 4.4 10.1s-1.8 7.5-4.4 10.1L168.4 465.6c-2.6 2.6-6.6 4.4-10.1 4.4 -3.5 0-7.5-1.8-10.1-4.4l-22-22c-2.6-2.6-4.4-6.6-4.4-10.1 0-3.5 1.8-7.5 4.4-10.1L299.4 250 126.1 76.7C123.5 74.1 121.7 70.1 121.7 66.6z'/%3E%3C/svg%3E");
-}
-
-@mixin i_check($color:$action-color){
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpath class='st0' d='M250.8 481.8C122.7 481.8 18.9 378 18.9 249.9S122.7 18 250.8 18s231.9 103.8 231.9 231.9S378.9 481.8 250.8 481.8zM384.3 167.7c-10.7-10.7-28.1-10.7-38.8 0L211.8 301.4 168.4 258c-10.8-10.4-28-10.1-38.4 0.8 -10.1 10.5-10.1 27.1 0 37.7l61.5 61.5c11.9 10.3 29.5 10.3 41.4 0l151.4-151.4C392.8 196.2 390.6 179.6 384.3 167.7z'/%3E%3C/svg%3E");
-}
-
-@mixin i_bosque($color:$action-color){
-  list-style: none;
-  @include img_sprite_pre();
-  &::before{
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpath class='st0' d='M218 131.2c-1.9-72.5-111.6-72.5-115.3 0 -52.1 0-72.5 55.8-39.1 91.1 -35.3 48.4 18.6 113.5 74.4 87.4 18.6 44.6 16.7 81.8 0 113.5h50.2c-18.6-42.8-9.3-81.8 3.7-119 42.8 16.7 96.7-22.3 78.1-74.4C309.1 190.7 273.8 121.9 218 131.2zM156.6 326.5c-3.7-7.4-7.4-14.9-9.3-22.3 3.7-1.9 7.4-5.6 11.2-11.2L156.6 326.5zM177.1 317.2l-1.9-26c1.9 3.7 5.6 5.6 9.3 9.3L177.1 317.2z'/%3E%3Cpath class='st0' d='M409.4 238.7c-1.2-45.8-70.5-45.8-72.9 0 -32.9 0-45.8 35.3-24.7 57.6 -22.3 30.6 11.8 71.7 47 55.2 11.8 28.2 10.6 51.7 0 71.7h31.7c-11.8-27-5.9-51.7 2.4-75.2 27 10.6 61.1-14.1 49.4-47C467 276.3 444.6 232.8 409.4 238.7zM370.6 362.1c-2.4-4.7-4.7-9.4-5.9-14.1 2.4-1.2 4.7-3.5 7.1-7.1L370.6 362.1zM383.5 356.2l-1.2-16.5c1.2 2.4 3.5 3.5 5.9 5.9L383.5 356.2z'/%3E%3C/svg%3E");
-  }
 }
 
 @mixin i_check($color:$action-color){
@@ -129,5 +82,3 @@ $gotham:"Gotham","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
 @mixin a_arrow($color:$dark){
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{url-friendly-colour($color)};%7D%0A%3C/style%3E%3Cpolygon class='st0' points='301.6 0.2 20.3 0.2 198.9 250.2 20.3 500.2 301.6 500.2 480.2 250.2 '/%3E%3C/svg%3E");
 }
-
-$pri: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23B9B9B9;%7D .st1%7Bfill:%23E20613;%7D .st2%7Bfill:%23009540;%7D .st3%7Bfill:%23FFFFFF;%7D .st4%7Bfill:%23090400;%7D%0A%3C/style%3E%3Cpath class='st0' d='M500 429V71c0-71-71-71-71-71H250 71C71 0 0 0 0 71v358c0 0 0 71 71 71h179 179C500 500 500 429 500 429'/%3E%3Cpath class='st1' d='M283.8 45.3C384.9 61 462.3 148.4 462.3 253.9c0 105.5-77.4 192.9-178.4 208.6V45.3z'/%3E%3Cpath class='st2' d='M39.9 253.9c0-102.1 72.5-187.3 168.8-206.9v413.9C112.4 441.2 39.9 356 39.9 253.9'/%3E%3Crect x='184.4' class='st3' width='140.7' height='498.3'/%3E%3Crect x='354.8' y='164.2' class='st3' width='43.6' height='171.8'/%3E%3Cpath class='st3' d='M113.1 194.8v45.1h8.9c0 0 8-0.3 8-9.8v-22.5c0 0 1-12.8-8.1-12.8H113.1zM69.6 167c0 0 63.4 0.1 66.2 0.4 5.8 0.5 33.3 5.3 33.3 30.8v41.7c0 0-4.7 30.6-33.3 30.6h-22.5v68.4H69.6V167z'/%3E%3Cpath class='st4' d='M248.5 135v39.3h8.2c0 0 7.3-0.3 7.3-9.5v-17.4c0 0 0.9-12.4-7.4-12.4H248.5zM205.1 106.9h70.6c0 0 27.6 3.8 27.6 31.4v29.3c0 0-0.2 11.7-11.6 21.3 -0.2 0.4 13.3 4.2 13.3 22.4v67.3h-40.8v-67.1c0 0-1.9-10.5-15.9-7.3 -0.2 0.4 0 74.6 0 74.6h-43.1V106.9z'/%3E%3C/svg%3E");
