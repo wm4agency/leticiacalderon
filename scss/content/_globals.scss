@@ -1,3 +1,8 @@
+
+html {
+  @media (min-width:$large ){font-size: 62.5%;}
+}
+
 body{
   overflow-y: scroll;
   font-weight: 100;
