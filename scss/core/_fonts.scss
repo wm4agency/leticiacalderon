@@ -1,11 +1,10 @@
 @font-face {
     font-family: 'HelveticaNeueLTStd';
-    src: url('fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
-        url('fonts/HelveticaNeueLTStd-Md.woff') format('woff');
-    font-weight: 400;
+    src: url('fonts/HelveticaNeueLTStd-Lt.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-Lt.woff') format('woff');
+    font-weight: 100;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'HelveticaNeueLTStd';
     src: url('fonts/HelveticaNeueLTStd-Roman.woff2') format('woff2'),
@@ -13,7 +12,13 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: url('fonts/HelveticaNeueLTStd-Md.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-Md.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 @font-face {
     font-family: 'HelveticaNeueLTStd';
     src: url('fonts/HelveticaNeueLTStd-Blk.woff2') format('woff2'),
@@ -22,14 +27,15 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'HelveticaNeueLTStd';
-    src: url('fonts/HelveticaNeueLTStd-Lt.woff2') format('woff2'),
-        url('fonts/HelveticaNeueLTStd-Lt.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
 
+
+@font-face {
+    font-family: 'HelveticaNeueLTStdCondensed';
+    src: url('fonts/HelveticaNeueLTStd-LtCn.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-LtCn.woff') format('woff');
+    font-weight: 100;
+    font-style:normal;
+}
 @font-face {
     font-family: 'HelveticaNeueLTStdCondensed';
     src: url('fonts/HelveticaNeueLTStd-Cn.woff2') format('woff2'),
@@ -37,15 +43,20 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'HelveticaNeueLTStdCondensed';
-    src: url('fonts/HelveticaNeueLTStd-LtCn.woff2') format('woff2'),
-        url('fonts/HelveticaNeueLTStd-LtCn.woff') format('woff');
-    font-weight: 100;
+    src: url('fonts/HelveticaNeueLTStd-BdCn.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-BdCn.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'HelveticaNeueLTStdCondensed';
+    src: url('fonts/HelveticaNeueLTStd-HvCn.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-HvCn.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 @font-face {
     font-family: 'HelveticaNeueLTStdCondensed';
     src: url('fonts/HelveticaNeueLTStd-BlkCn.woff2') format('woff2'),
@@ -53,7 +64,6 @@
     font-weight: 800;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'HelveticaNeueLTStdCondensed';
     src: url('fonts/HelveticaNeueLTStd-XBlkCn.woff2') format('woff2'),
@@ -62,16 +72,28 @@
     font-style: normal;
 }
 
+
 @font-face {
-    font-family: 'HelveticaNeueLTStdCondensed';
-    src: url('fonts/HelveticaNeueLTStd-HvCn.woff2') format('woff2'),
-        url('fonts/HelveticaNeueLTStd-HvCn.woff') format('woff');
-    font-weight: 700;
+    font-family: 'HelveticaNeueLTStdExtended';
+    src: url('fonts/HelveticaNeueLTStd-Extended.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-Extended.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HelveticaNeueLTStdExtended';
+    src: url('fonts/HelveticaNeueLTStd-BlkEx.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLTStd-BlkEx.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
 }
 
 
-%helvetica {font-family: "HelveticaNeueLTStd", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 $helvetica:"HelveticaNeueLTStd", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-%helveticaCond{font-family: "HelveticaNeueLTStdCondensed", "HelveticaNeueCondensed", "Helvetica Neue Condensed", Helvetica, Arial, sans-serif;}
+%helvetica {font-family: $helvetica;}
+
 $helveticaCond:"HelveticaNeueLTStdCondensed", "HelveticaNeueCondensed", "Helvetica Neue Condensed", Helvetica, Arial, sans-serif;
+%helveticaCond{font-family: $helveticaCond;}
+
+$helveticaExt:"HelveticaNeueLTStdExtended", "HelveticaNeueExtended", "Helvetica Neue Extended", Helvetica, Arial, sans-serif;
+%helveticaExt{font-family: $helveticaExt}

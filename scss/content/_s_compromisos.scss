@@ -51,7 +51,7 @@ section#compromisos{
           transition: height .5s;
           display: block;
           overflow-y: scroll;
-          &.hidden{height: 0;}
+          &.closed{height: 0;}
         }
 
         li{

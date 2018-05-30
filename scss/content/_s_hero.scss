@@ -1,10 +1,9 @@
-header#hero{
+section#hero{
     height: 100%;
     height: 100vh;
     background-color: $lc_grey ;
-    background-image:linear-gradient(to bottom right, $lc_grey, $w) no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: radial-gradient(ellipse  farthest-corner at 30% 125%, white 50%,#a8aaad);    //background-size: cover;
+  //background-attachment: fixed;
 
     @media (min-width: $large){
       height: 80%;
@@ -14,18 +13,16 @@ header#hero{
     .container{
       height: 100%;
       width: 100%;
+      padding: 0;
     }
 
     .leticia{
       height: 100%;
       width: 100%;
-      background-image:  url(../images/RicardoAstudillo_frontal_opt.png);
+      background-image:  url(../images/LeticiaCalderon_main_mov.png);
       background-repeat: no-repeat;
-      background-position: bottom left calc(100% + 150px);
-      background-size: auto 90%;
-      //background-size: contain;
-      //background-attachment: fixed;
-      //background-color: crimson;
+      background-position: bottom left 90%;
+      background-size: auto 65%;
       position: absolute;
       margin: 0;
       z-index: 10;
@@ -43,9 +40,16 @@ header#hero{
         background-size: auto 70%;
         background-position: bottom right;
         background-position: bottom 17vh right 47%;
-        background-image:  url(../images/RicardoAstudillo_Brazos-abiertos.png);
+        background-image:  url(../images/LeticiaCalderon_main_dkt.png);
       }
     }
 
+    .calderon{
+      font-size: .95rem;
+      position: absolute;
+      top:10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
   }

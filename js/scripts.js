@@ -47,52 +47,47 @@ function delegateEvents(){
 
         if (e.classList.contains( "m-nav-toggler" ) ) { // botones en formas de contacto
             e.preventDefault;
-            //console.log(e);
             togglenav();
         }
         else if (e.classList.contains( 'send' ) ) { //envíos de formas
             e.preventDefault;
             var forma = e.form;
-            //console.log(e);
             checkvals(forma);
         }
         else if(e.getAttribute("data-target")){// objetos que disparan navegación
             e.preventDefault;
-            //console.log(e);
             navegar(e);
           }
         else if($(e).parents().hasClass('accordion')){
-          //console.log("accordion sibbling toggler");
           var parent = findAncestor(e,"accordion"),
               granpa = findAncestor(parent,"container"),
               contentNodes = granpa.getElementsByClassName('content'),
               content = parent.getElementsByClassName('content')[0],
               el;
 
-          if(content.classList.contains('hidden')){
+          if(content.classList.contains('closed')){
             for(i=0; i<contentNodes.length;i++){
-              contentNodes[i].classList.add('hidden');
+              contentNodes[i].classList.add('closed');
             }
-            content.classList.toggle("hidden");
+            content.classList.toggle("closed");
           }
-          else {content.classList.add("hidden");}
-          console.log(granpa);
+          else {content.classList.add("closed");}
         }
         else if($(e).children().hasClass('accordion')){
-          //console.log("accordion parent toggler");
           var content = e.getElementsByClassName('content')[0],
               granpa = findAncestor(e,"container"),
               contentNodes = granpa.getElementsByClassName('content');
 
-          if(content.classList.contains('hidden')){
+          if(content.classList.contains('closed')){
             for(i=0; i<contentNodes.length;i++){
-              contentNodes[i].classList.add('hidden');
+              contentNodes[i].classList.add('closed');
             }
-            content.classList.toggle("hidden");
+            content.classList.toggle("closed");
           }
-          else {content.classList.add("hidden");}
+          else {content.classList.add("closed");}
 
         }
+
 
     }, false);
 }

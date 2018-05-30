@@ -23,16 +23,18 @@ aside#slidding_menu, div#panel{
 
 aside#slidding_menu{
     background-color: $lc_grey;
-    background-size: 200%;
-    position: fixed;
     height: 100%;
     height: 100vh;
     width:100%;
     width: 100vw;
     z-index: 0;
 
-    //button.hamburger{color: $w;}
-    i.burger::after{@include burger($lc_green);}
+    i.burger{
+      bottom: 15px;
+      top:unset;
+      z-index: unset;
+      &::after{@include burger($lc_green);}
+    }
 
     nav{
         position: absolute;
@@ -71,7 +73,7 @@ aside#slidding_menu{
       z-index: 99;
       position: absolute;
 
-      .astudillo{display: none;}
+      .calderon{display: none;}
 
       nav {
         width: 85%;
@@ -120,17 +122,11 @@ div#panel{
     overflow-x: hidden;
     overflow-y: scroll;
     position: absolute;
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    transition: 1.5s ease-in-out;
 
     &.sliding{
-        -webkit-transform: translateX(100%);
-        -moz-transform: translateX(100%);
-        -o-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        transform: translatex(100%);
+        transform: translateY(100%);
+        transition: 3s ease-in-out;
     }
 
 }

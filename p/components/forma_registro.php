@@ -1,14 +1,12 @@
-<h4>¡Apoya a tu candidata!</h4>
-<header class="calderon">
-  <h1>Leticia Calderón</h1>
-  <h2>candidata a presidente municipal</h2>
-  <h3>municipio de Valle de Chalco Solidaridad</h3>
+<header>
+  <h4>¡Apoya a tu candidata!</h4>
+  <?php include "leticiaCalderon.php" ?>
 </header>
 <form class="sign-in">
   <fieldset>
     <legend>
       <i class="fas fa-bullhorn"></i>
-      <h3>¡Participa!</h3>
+      <h5>¡Participa!</h5>
       <p>
         <strong>Regístrate como simpatizante</strong> y colabora difundiendo su proyecto para un buen gobierno y un mejor Valle de Chalco Solidaridad.</p>
     </legend>

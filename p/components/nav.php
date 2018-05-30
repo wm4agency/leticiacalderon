@@ -8,11 +8,7 @@
 <i class="burger m-nav-toggler"></i>
 
 <nav id="m-menu">
-  <header class="calderon">
-    <h1>Leticia Calderón</h1>
-    <h2>candidata a presidente municipal</h2>
-    <h3>municipio de Valle de Chalco Solidaridad</h3>
-  </header>
+  <?php include "leticiaCalderon.php"; ?>
   <ul class="nav-links">
     <li data-target="#intro">semblanza</li>
     <li data-target="#puntos">compromisos</li>

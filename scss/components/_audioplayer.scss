@@ -1,3 +1,15 @@
-div.wm4_audioplayer{
+section#audios{
+  .wm4_audioplayer{
+    background: #e6e6e6;
 
+    header{
+      background-color: #ccc;
+      text-align: center;
+      h1,h2{padding: 0 1.5rem;}
+      h1{font-size: 3rem;line-height: 2.75rem; margin: 1.5rem 0 .5rem 0; }
+      h2{font-size: 1.5rem;font-weight: 100;letter-spacing: 0.05rem}
+    }
+
+    .jouele-playlist{padding: 1.5rem;}
+  }
 }

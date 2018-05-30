@@ -4,7 +4,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio Limpio y Agua Potable</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Programa Integral de Pavimentación.</li>
           <li>Aumento del parque vehicular de camiones recolectores de basura para todas las colonias.
           Campaña de limpieza: Nuestra Colonia Primero, a realizarse de manera conjunta entre ciudadanos y gobierno.</li>
@@ -16,7 +16,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio Seguro</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Creación de la Red Dinámica para la Prevención de Inseguridad.</li>
           <li>Recuperación y construcción de módulos policiacos en todas las colonias.</li>
           <li>Capacitar y dignificar la función de los policías con mejores salarios y beneficios  para sus familias.</li>
@@ -29,7 +29,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio Emprendedor</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Gestionar apoyos a fondo perdido para el fortalecimiento y creación de pequeños y medianos negocios.</li>
           <li>Simplificación de trámites para regularizar y apertura negocios.</li>
           <li>Capacitación gratuita para la implementación de nuevos negocios.</li>
@@ -41,7 +41,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio Cercano y Transparente</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Audiencias públicas en todas las colonias.</li>
           <li>Línea Telefónica Directa con la Presidenta Municipal.</li>
           <li>Creación de un código de ética para los funcionarios y servidores públicos del municipio.</li>
@@ -51,7 +51,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio con Orgullo e Identidad</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Construcción del Instituto Tecnológico de Estudios Superiores de Valle de Chalco Solidaridad.</li>
           <li>Ampliación de la oferta de carreras en la UAEM de Valle de Chalco.</li>
           <li>Rehabilitación del Deportivo Luis Donaldo Colosio.</li>
@@ -66,7 +66,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio Saludable</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Ampliación y mejoría en la calidad de los servicios médicos que ofrece el Hospital General Fernando Quiroz, así como el abasto de medicamentos en todos los hospitales y centros de salud municipales.</li>
           <li>Construcción de la Policlínica Infantil de Valle de Chalco Solidaridad.</li>
           <li>Construcción de un Hospital para los Adultos Mayores.</li>
@@ -81,7 +81,7 @@
     <li>
       <article class="accordion">
         <h2>Municipio para ellas</h2>
-        <ul class="content hidden">
+        <ul class="content closed">
           <li>Línea veinticuatro horas para la denuncia de violencia intrafamiliar y de género.</li>
           <li>Talleres de profesionalización en oficios.</li>
           <li>Talleres  y campañas permanentes para la difusión de los derechos de las mujeres y la importancia de los valores para las familias vallechalquenses.</li>
