@@ -32,6 +32,8 @@ function delegateEvents(){
     //port touch events to click events
     document.addEventListener('touchend', function(e) {
       /* prevent delay and simulated mouse events */
+      console.log(e);
+
       if (e.classList.contains( "m-nav-toggler" ) ){
         e.stopPropagation();
         e.preventDefault();
@@ -43,7 +45,7 @@ function delegateEvents(){
     document.addEventListener('click', function (event) {
         var e = event.target;
         //e.preventDefault
-        //console.log(e);
+        console.log(e);
 
         if (e.classList.contains( "m-nav-toggler" ) ) { // botones en formas de contacto
             e.preventDefault;

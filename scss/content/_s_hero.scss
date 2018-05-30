@@ -21,8 +21,8 @@ section#hero{
       width: 100%;
       background-image:  url(../images/LeticiaCalderon_main_mov.png);
       background-repeat: no-repeat;
-      background-position: bottom left 90%;
-      background-size: auto 65%;
+      background-position: bottom left 100%;
+      background-size: auto 60%;
       position: absolute;
       margin: 0;
       z-index: 10;
@@ -50,6 +50,40 @@ section#hero{
       top:10%;
       left: 50%;
       transform: translateX(-50%);
+    }
+
+    p.slogan{
+      position: absolute;
+      width: 50%;
+      bottom: 40%;
+      right: 1.5rem;
+      text-align: right;
+      z-index: 10;
+      color: $lc_grey;
+      font-size: 1.5em;
+      line-height: .65em;
+
+      strong{
+        display: block;
+        font-weight: 800;
+        b{
+          font-size: 1.15em;
+          text-transform: uppercase;
+          vertical-align: sub;
+          line-height: 1.25em;
+        }
+      }
+    }
+
+    .votaPRI{
+      position: absolute;
+      bottom: 30%;
+      /* top: unset; */
+      z-index: 10;
+      width: 9em;
+      right: 15px;
+      margin: 0;
+      padding: 0;
     }
 
   }
