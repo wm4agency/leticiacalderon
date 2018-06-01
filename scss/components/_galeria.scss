@@ -1,14 +1,23 @@
 div.galeria{
   position: relative;
   margin: 0 auto;
-  figure{
+  figure.swipe_element{
     @include img_sprite(100%);
     background: $dark;
-    border: 1px dotted $darkest;
+    //border: 1px dotted $darkest;
     display: block;
     width: 49%;
     display: block;
     float: left;
     overflow: hidden;
+
+    figure{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+    }
   }
 }

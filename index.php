@@ -27,7 +27,8 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
       <?php include_once "p/partials/s_decalogo.php"; ?>
     </section>
     <section id="galeria">
-      <div class="galeria"></div>
+      <div id="galeria-DOM" class="galeria"></div>
+      <div id="pswpGal" class="galeria"></div>
     </section>
     <section id="audios">
       <div class="container"><?php include_once "p/components/audio_player.php"; ?></div>
@@ -36,8 +37,9 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
       <div class="container"><?php include_once "p/components/forma_registro.php"; ?></div>
     </section>
   </main>
-  <? include_once "p/partials/foot.php"; ?>
+  <?php include_once "p/partials/foot.php"; ?>
 </div>
+<?php include_once "p/components/photoswipe_element.php"; ?>
 </body>
 <?php include_once "p/services/scripts.php"; ?>
 </html>

@@ -1260,24 +1260,30 @@ div#panel {
 div.galeria {
   position: relative;
   margin: 0 auto; }
-  div.galeria figure {
+  div.galeria figure.swipe_element {
     position: relative;
     background: no-repeat center center;
     margin: 0;
     padding: 0;
     background-size: cover;
     background: #3e3e3e;
-    border: 1px dotted #2e2a25;
     display: block;
     width: 49%;
     display: block;
     float: left;
     overflow: hidden; }
-    div.galeria figure::after {
+    div.galeria figure.swipe_element::after {
       content: "";
       padding-bottom: 100%;
       display: block;
       position: relative; }
+    div.galeria figure.swipe_element figure {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      position: absolute;
+      margin: 0;
+      padding: 0; }
 
 .jouele {
   display: block;
@@ -1927,7 +1933,7 @@ section#hero {
   section#hero .leticia {
     height: 100%;
     width: 100%;
-    background-image: url(../images/LeticiaCalderon_main_mov.png);
+    background-image: url(../assets/images/LeticiaCalderon_main_mov.png);
     background-repeat: no-repeat;
     background-position: bottom left 100%;
     background-size: auto 60%;
@@ -1986,7 +1992,7 @@ section#hero {
         background-size: auto 70%;
         background-position: bottom right;
         background-position: bottom 17vh right 47%;
-        background-image: url(../images/LeticiaCalderon_main_dkt.png); } }
+        background-image: url(../assets/images/LeticiaCalderon_main_dkt.png); } }
   section#hero .calderon {
     font-size: .95rem;
     position: absolute;
