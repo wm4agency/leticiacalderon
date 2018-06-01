@@ -1,7 +1,7 @@
 /*! PhotoSwipe - v4.1.2 - 2017-04-05
 * http://photoswipe.com
 * Copyright (c) 2017 Dmitry Semenov; */
-(function (root, factory) { 
+(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(factory);
     } else if (typeof exports === 'object') {
@@ -10,7 +10,7 @@
         root.PhotoSwipe = factory();
     }
 })(this, function () {
-
+  console.log("photoswipe!");
     'use strict';
     var PhotoSwipe = function(template, UiClass, items, options){
 
@@ -18,9 +18,9 @@
         /**
  *
  * Set of generic functions used by gallery.
- * 
+ *
  * You're free to modify anything here as long as functionality is kept.
- * 
+ *
  */
         var framework = {
             features: null,
@@ -52,7 +52,7 @@
             },
             removeClass: function(el, className) {
                 var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-                el.className = el.className.replace(reg, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, ''); 
+                el.className = el.className.replace(reg, ' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
             },
             addClass: function(el, className) {
                 if( !framework.hasClass(el,className) ) {
@@ -76,7 +76,7 @@
                 while(i--) {
                     if(array[i][key] === value) {
                         return i;
-                    } 
+                    }
                 }
                 return -1;
             },
@@ -127,16 +127,16 @@
             },
 
             /**
-	 * 
+	 *
 	 * @return {object}
-	 * 
+	 *
 	 * {
 	 *  raf : request animation frame function
 	 *  caf : cancel animation frame function
 	 *  transfrom : transform property key (with vendor), or null if not supported
 	 *  oldIE : IE8 or below
 	 * }
-	 * 
+	 *
 	 */
             detectFeatures: function() {
                 if(framework.features) {
@@ -162,13 +162,13 @@
                 // fix false-positive detection of old Android in new IE
                 // (IE11 ua string contains "Android 4.0")
 
-                if(!features.pointerEvent) { 
+                if(!features.pointerEvent) {
 
                     var ua = navigator.userAgent;
 
                     // Detect if device is iPhone or iPod and if it's older than iOS 8
                     // http://stackoverflow.com/a/14223920
-                    // 
+                    //
                     // This detection is made because of buggy top/bottom toolbars
                     // that don't trigger window.resize event.
                     // For more info refer to _isFixedPosition variable in core.js
@@ -195,7 +195,7 @@
                             features.isOldAndroid = true; // for fixed position bug & performance
                         }
                         features.androidVersion = androidversion; // for touchend bug
-                    }	
+                    }
                     features.isMobileOpera = /opera mini|opera mobi/i.test(ua);
 
                     // p.s. yes, yes, UA sniffing is bad, propose your solution for above bugs.
@@ -213,8 +213,8 @@
                         styleCheckItem = styleChecks[a];
 
                         // uppercase first letter of property name, if vendor is present
-                        styleName = vendor + (vendor ? 
-                                              styleCheckItem.charAt(0).toUpperCase() + styleCheckItem.slice(1) : 
+                        styleName = vendor + (vendor ?
+                                              styleCheckItem.charAt(0).toUpperCase() + styleCheckItem.slice(1) :
                                               styleCheckItem);
 
                         if(!features[styleCheckItem] && styleName in helperStyle ) {
@@ -226,7 +226,7 @@
                         vendor = vendor.toLowerCase();
                         features.raf = window[vendor+'RequestAnimationFrame'];
                         if(features.raf) {
-                            features.caf = window[vendor+'CancelAnimationFrame'] || 
+                            features.caf = window[vendor+'CancelAnimationFrame'] ||
                                 window[vendor+'CancelRequestAnimationFrame'];
                         }
                     }
@@ -245,7 +245,7 @@
                 }
 
                 // Detect SVG support
-                features.svg = !!document.createElementNS && 
+                features.svg = !!document.createElementNS &&
                     !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
 
                 framework.features = features;
@@ -303,7 +303,7 @@
         /**
  * Static vars, don't change unless you know what you're doing.
  */
-        var DOUBLE_TAP_RADIUS = 25, 
+        var DOUBLE_TAP_RADIUS = 25,
             NUM_HOLDERS = 3;
 
         /**
@@ -350,8 +350,8 @@
  * Private helper variables & functions
  */
 
-        var _getEmptyPoint = function() { 
-            return {x:0,y:0}; 
+        var _getEmptyPoint = function() {
+            return {x:0,y:0};
         };
 
         var _isOpen,
@@ -447,7 +447,7 @@
 
             _applyZoomTransform = function(styleObj,x,y,zoom,item) {
                 if(!_renderMaxResolution || (item && item !== self.currItem) ) {
-                    zoom = zoom / (item ? item.fitRatio : self.currItem.fitRatio);	
+                    zoom = zoom / (item ? item.fitRatio : self.currItem.fitRatio);
                 }
 
                 styleObj[_transformKey] = _translatePrefix + x + 'px, ' + y + 'px' + _translateSufix + ' scale(' + zoom + ')';
@@ -476,9 +476,9 @@
             _applyZoomPanToItem = function(item) {
                 if(item.container) {
 
-                    _applyZoomTransform(item.container.style, 
-                                        item.initialPosition.x, 
-                                        item.initialPosition.y, 
+                    _applyZoomTransform(item.container.style,
+                                        item.initialPosition.x,
+                                        item.initialPosition.y,
                                         item.initialZoomLevel,
                                         item);
                 }
@@ -492,10 +492,10 @@
                     var newSlideIndexOffset = _currentItemIndex + (_slideSize.x * _currPositionIndex - x) / _slideSize.x,
                         delta = Math.round(x - _mainScrollPos.x);
 
-                    if( (newSlideIndexOffset < 0 && delta > 0) || 
+                    if( (newSlideIndexOffset < 0 && delta > 0) ||
                        (newSlideIndexOffset >= _getNumItems() - 1 && delta < 0) ) {
                         x = _mainScrollPos.x + delta * _options.mainScrollEndFriction;
-                    } 
+                    }
                 }
 
                 _mainScrollPos.x = x;
@@ -522,7 +522,7 @@
             _onFirstMouseMove = function() {
                 // Wait until mouse move event is fired at least twice during 100ms
                 // We do this, because some mobile browsers trigger it on touchstart
-                if(_mouseMoveTimeout ) { 
+                if(_mouseMoveTimeout ) {
                     framework.unbind(document, 'mousemove', _onFirstMouseMove);
                     framework.addClass(template, 'pswp--has_mouse');
                     _options.mouseUsed = true;
@@ -534,8 +534,9 @@
             },
 
             _bindEvents = function() {
+              console.log("binding...");
                 framework.bind(document, 'keydown', self);
-
+                console.log(self);
                 if(_features.transform) {
                     // don't bind click event in browsers that don't support transform (mostly IE8)
                     framework.bind(self.scrollWrap, 'click', self);
@@ -597,7 +598,7 @@
                     destPanOffset[axis] = self.currItem.initialPosition[axis];
                     return true;
                 } else {
-                    destPanOffset[axis] = _calculatePanOffset(axis, destZoomLevel); 
+                    destPanOffset[axis] = _calculatePanOffset(axis, destZoomLevel);
 
                     if(destPanOffset[axis] > destPanBounds.min[axis]) {
                         destPanOffset[axis] = destPanBounds.min[axis];
@@ -616,7 +617,7 @@
                     // setup 3d transforms
                     var allow3dTransform = _features.perspective && !_likelyTouchDevice;
                     _translatePrefix = 'translate' + (allow3dTransform ? '3d(' : '(');
-                    _translateSufix = _features.perspective ? ', 0px)' : ')';	
+                    _translateSufix = _features.perspective ? ', 0px)' : ')';
                     return;
                 }
 
@@ -664,12 +665,12 @@
 
             _onKeyDown = function(e) {
                 var keydownAction = '';
-                if(_options.escKey && e.keyCode === 27) { 
+                if(_options.escKey && e.keyCode === 27) {
                     keydownAction = 'close';
                 } else if(_options.arrowKeys) {
                     if(e.keyCode === 37) {
                         keydownAction = 'prev';
-                    } else if(e.keyCode === 39) { 
+                    } else if(e.keyCode === 39) {
                         keydownAction = 'next';
                     }
                 }
@@ -682,7 +683,7 @@
                             e.preventDefault();
                         } else {
                             e.returnValue = false;
-                        } 
+                        }
                         self[keydownAction]();
                     }
                 }
@@ -701,7 +702,7 @@
             },
 
             _updatePageScrollOffset = function() {
-                self.setScrollOffset(0, framework.getScrollY());		
+                self.setScrollOffset(0, framework.getScrollY());
             };
 
 
@@ -736,7 +737,7 @@
 
                     if( _animations.hasOwnProperty( prop ) ) {
                         _stopAnimation(prop);
-                    } 
+                    }
 
                 }
             },
@@ -788,7 +789,7 @@
             },
             isDragging: function() {
                 return _isDragging;
-            },	
+            },
             isZooming: function() {
                 return _isZooming;
             },
@@ -862,7 +863,7 @@
                     click: _onGlobalClick
                 };
 
-                // disable show/hide effects on old browsers that don't support CSS animations or transforms, 
+                // disable show/hide effects on old browsers that don't support CSS animations or transforms,
                 // old IOS, Android and Opera mobile. Blackberry seems to work fine, even older models.
                 var oldPhone = _features.isOldIOSPhone || _features.isOldAndroid || _features.isMobileOpera;
                 if(!_features.animationName || !_features.transform || oldPhone) {
@@ -932,7 +933,7 @@
 
                 if(!_oldIE) {
                     framework.bind(self.scrollWrap, _downEvents, self); // no dragging for old IE
-                }	
+                }
 
                 _listen('initialZoomInEnd', function() {
                     self.setContent(_itemHolders[0], _currentItemIndex-1);
@@ -941,8 +942,8 @@
                     _itemHolders[0].el.style.display = _itemHolders[2].el.style.display = 'block';
 
                     if(_options.focus) {
-                        // focus causes layout, 
-                        // which causes lag during the animation, 
+                        // focus causes layout,
+                        // which causes lag during the animation,
                         // that's why we delay it untill the initial zoom transition ends
                         template.focus();
                     }
@@ -961,12 +962,12 @@
                 if(!_isFixedPosition) {
 
                     // On all versions of iOS lower than 8.0, we check size of viewport every second.
-                    // 
-                    // This is done to detect when Safari top & bottom bars appear, 
-                    // as this action doesn't trigger any events (like resize). 
-                    // 
+                    //
+                    // This is done to detect when Safari top & bottom bars appear,
+                    // as this action doesn't trigger any events (like resize).
+                    //
                     // On iOS8 they fixed this.
-                    // 
+                    //
                     // 10 Nov 2014: iOS 7 usage ~40%. iOS 8 usage 56%.
 
                     _updateSizeInterval = setInterval(function() {
@@ -1022,8 +1023,8 @@
 
             /**
 	 * Pan image to position
-	 * @param {Number} x     
-	 * @param {Number} y     
+	 * @param {Number} x
+	 * @param {Number} y
 	 * @param {Boolean} force Will ignore bounds if set to true.
 	 */
             panTo: function(x,y,force) {
@@ -1098,7 +1099,7 @@
                     _currZoomElementStyle = null;
                 }
 
-                _currPanBounds = self.currItem.bounds;	
+                _currPanBounds = self.currItem.bounds;
                 _startZoomLevel = _currZoomLevel = self.currItem.initialZoomLevel;
 
                 _panOffset.x = _currPanBounds.center.x;
@@ -1168,7 +1169,7 @@
                     if(prevItem.initialZoomLevel !== _currZoomLevel) {
                         _calculateItemSize(prevItem , _viewportSize );
                         _setImageSize(prevItem);
-                        _applyZoomPanToItem( prevItem ); 				
+                        _applyZoomPanToItem( prevItem );
                     }
 
                 }
@@ -1267,7 +1268,7 @@
 
                     }
                     _itemsNeedUpdate = false;
-                }	
+                }
 
                 _startZoomLevel = _currZoomLevel = self.currItem.initialZoomLevel;
                 _currPanBounds = self.currItem.bounds;
@@ -1346,7 +1347,7 @@
         /*>>gestures*/
         /**
  * Mouse/touch/pointer event handlers.
- * 
+ *
  * separated from @core.js for readability
  */
 
@@ -1463,7 +1464,7 @@
                 if(time - _gestureCheckSpeedTime > 50) {
                     var o = _posPoints.length > 2 ? _posPoints.shift() : {};
                     o.x = x;
-                    o.y = y; 
+                    o.y = y;
                     _posPoints.push(o);
                     _gestureCheckSpeedTime = time;
                 }
@@ -1533,7 +1534,7 @@
                 // calculate fdistance over the bounds and friction
                 if(newOffset > _currPanBounds.min[axis] || newOffset < _currPanBounds.max[axis]) {
                     panFriction = _options.panEndFriction;
-                    // Linear increasing of friction, so at 1/4 of viewport it's at max value. 
+                    // Linear increasing of friction, so at 1/4 of viewport it's at max value.
                     // Looks not as nice as was expected. Left for history.
                     // panFriction = (1 - (_panOffset[axis] + delta[axis] + panBounds.min[axis]) / (_viewportSize[axis] / 4) );
                 } else {
@@ -1642,7 +1643,7 @@
 
                 // Allow dragging only via left mouse button.
                 // As this handler is not added in IE8 - we ignore e.which
-                // 
+                //
                 // http://www.quirksmode.org/js/events_properties.html
                 // https://developer.mozilla.org/en-US/docs/Web/API/event.button
                 if(e.type === 'mousedown' && e.button > 0  ) {
@@ -1691,13 +1692,13 @@
                     _isDragging = _isFirstMove = true;
                     framework.bind(window, _upMoveEvents, self);
 
-                    _isZoomingIn = 
-                        _wasOverInitialZoom = 
-                        _opacityChanged = 
-                        _verticalDragInitiated = 
-                        _mainScrollShifted = 
-                        _moved = 
-                        _isMultitouch = 
+                    _isZoomingIn =
+                        _wasOverInitialZoom =
+                        _opacityChanged =
+                        _verticalDragInitiated =
+                        _mainScrollShifted =
+                        _moved =
+                        _isMultitouch =
                         _zoomStarted = false;
 
                     _direction = null;
@@ -1762,7 +1763,7 @@
                     if(pointerIndex > -1) {
                         var p = _currPointers[pointerIndex];
                         p.x = e.pageX;
-                        p.y = e.pageY; 
+                        p.y = e.pageY;
                     }
                 }
 
@@ -1785,9 +1786,9 @@
                     } else {
                         _currentPoints = touchesList;
                     }
-                }	
+                }
             },
-            // 
+            //
             _renderMovement =  function() {
 
                 if(!_currentPoints) {
@@ -1899,7 +1900,7 @@
                     if(_isFirstMove) {
                         _isFirstMove = false;
 
-                        // subtract drag distance that was used during the detection direction  
+                        // subtract drag distance that was used during the detection direction
 
                         if( Math.abs(delta.x) >= DIRECTION_CHECK_OFFSET) {
                             delta.x -= _currentPoints[0].x - _startPoint.x;
@@ -1960,7 +1961,7 @@
                         return;
                     }
 
-                    // on Android (v4.1, 4.2, 4.3 & possibly older) 
+                    // on Android (v4.1, 4.2, 4.3 & possibly older)
                     // ghost mousedown/up event isn't preventable via e.preventDefault,
                     // which causes fake mousedown event
                     // so we block mousedown/up for 600ms
@@ -1992,7 +1993,7 @@
                         } else {
                             var MSPOINTER_TYPES = {
                                 4: 'mouse', // event.MSPOINTER_TYPE_MOUSE
-                                2: 'touch', // event.MSPOINTER_TYPE_TOUCH 
+                                2: 'touch', // event.MSPOINTER_TYPE_TOUCH
                                 3: 'pen' // event.MSPOINTER_TYPE_PEN
                             };
                             releasePoint.type = MSPOINTER_TYPES[e.pointerType];
@@ -2022,7 +2023,7 @@
                 // if second pointer released
                 if(numPoints === 1) {
                     _equalizePoints(_startPoint, touchList[0]);
-                }				
+                }
 
 
                 // pointer hasn't moved, send "tap release" point
@@ -2032,7 +2033,7 @@
                             releasePoint = {x: e.pageX, y: e.pageY, type:'mouse'};
                         } else if(e.changedTouches && e.changedTouches[0]) {
                             releasePoint = {x: e.changedTouches[0].pageX, y: e.changedTouches[0].pageY, type:'touch'};
-                        }		
+                        }
                     }
 
                     _shout('touchRelease', e, releasePoint);
@@ -2114,7 +2115,7 @@
                 }
 
 
-                // main scroll 
+                // main scroll
                 if(  (_mainScrollShifted || _mainScrollAnimating) && numPoints === 0) {
                     var itemChanged = _finishSwipeMainScrollGesture(gestureType, _releaseAnimData);
                     if(itemChanged) {
@@ -2128,7 +2129,7 @@
                     return;
                 }
 
-                // Complete simple zoom gesture (reset zoom level if it's out of the bounds)  
+                // Complete simple zoom gesture (reset zoom level if it's out of the bounds)
                 if(gestureType !== 'swipe') {
                     _completeZoomGesture();
                     return;
@@ -2204,10 +2205,10 @@
                                     s.lastFlickSpeed[axis] = 0;
                                     s.backAnimStarted[axis] = true;
 
-                                    _animateProp('bounceZoomPan'+axis,_panOffset[axis], 
-                                                 s.backAnimDestination[axis], 
-                                                 speed || 300, 
-                                                 framework.easing.sine.out, 
+                                    _animateProp('bounceZoomPan'+axis,_panOffset[axis],
+                                                 s.backAnimDestination[axis],
+                                                 speed || 300,
+                                                 framework.easing.sine.out,
                                                  function(pos) {
                                         _panOffset[axis] = pos;
                                         _applyCurrentZoomPan();
@@ -2222,8 +2223,8 @@
                     // Reduces the speed by slowDownRatio (per 10ms)
                     calculateAnimOffset: function(axis) {
                         if(!s.backAnimStarted[axis]) {
-                            s.speedDecelerationRatio[axis] = s.speedDecelerationRatio[axis] * (s.slowDownRatio[axis] + 
-                                                                                               s.slowDownRatioReverse[axis] - 
+                            s.speedDecelerationRatio[axis] = s.speedDecelerationRatio[axis] * (s.slowDownRatio[axis] +
+                                                                                               s.slowDownRatioReverse[axis] -
                                                                                                s.slowDownRatioReverse[axis] * s.timeDiff / 10);
 
                             s.speedDecelerationRatioAbs[axis] = Math.abs(s.lastFlickSpeed[axis] * s.speedDecelerationRatio[axis]);
@@ -2307,13 +2308,13 @@
                     var totalShiftDist = _currPoint.x - _startPoint.x,
                         isFastLastFlick = _releaseAnimData.lastFlickDist.x < 10;
 
-                    // if container is shifted for more than MIN_SWIPE_DISTANCE, 
+                    // if container is shifted for more than MIN_SWIPE_DISTANCE,
                     // and last flick gesture was in right direction
-                    if(totalShiftDist > MIN_SWIPE_DISTANCE && 
+                    if(totalShiftDist > MIN_SWIPE_DISTANCE &&
                        (isFastLastFlick || _releaseAnimData.lastFlickOffset.x > 20) ) {
                         // go to prev item
                         itemsDiff = -1;
-                    } else if(totalShiftDist < -MIN_SWIPE_DISTANCE && 
+                    } else if(totalShiftDist < -MIN_SWIPE_DISTANCE &&
                               (isFastLastFlick || _releaseAnimData.lastFlickOffset.x < -20) ) {
                         // go to next item
                         itemsDiff = 1;
@@ -2351,10 +2352,10 @@
 
                 if(!itemChanged && animateToX > _mainScrollPos.x !== _releaseAnimData.lastFlickSpeed.x > 0) {
                     // "return to current" duration, e.g. when dragging from slide 0 to -1
-                    finishAnimDuration = 333; 
+                    finishAnimDuration = 333;
                 } else {
-                    finishAnimDuration = Math.abs(_releaseAnimData.lastFlickSpeed.x) > 0 ? 
-                        animateToDist / Math.abs(_releaseAnimData.lastFlickSpeed.x) : 
+                    finishAnimDuration = Math.abs(_releaseAnimData.lastFlickSpeed.x) > 0 ?
+                        animateToDist / Math.abs(_releaseAnimData.lastFlickSpeed.x) :
                     333;
 
                     finishAnimDuration = Math.min(finishAnimDuration, 400);
@@ -2369,7 +2370,7 @@
 
                 _shout('mainScrollAnimStart');
 
-                _animateProp('mainScroll', _mainScrollPos.x, animateToX, finishAnimDuration, framework.easing.cubic.out, 
+                _animateProp('mainScroll', _mainScrollPos.x, animateToX, finishAnimDuration, framework.easing.cubic.out,
                              _moveMainScroll,
                              function() {
                     _stopAllAnimations();
@@ -2462,7 +2463,7 @@
                         addEventNames('touch', 'start', 'move', 'end', 'cancel');
                         _likelyTouchDevice = true;
                     } else {
-                        addEventNames('mouse', 'down', 'move', 'up');	
+                        addEventNames('mouse', 'down', 'move', 'up');
                     }
 
                     _upMoveEvents = _dragMoveEvent + ' ' + _dragEndEvent  + ' ' +  _dragCancelEvent;
@@ -2472,7 +2473,7 @@
                         _likelyTouchDevice = (navigator.maxTouchPoints > 1) || (navigator.msMaxTouchPoints > 1);
                     }
                     // make variable public
-                    self.likelyTouchDevice = _likelyTouchDevice; 
+                    self.likelyTouchDevice = _likelyTouchDevice;
 
                     _globalEventHandlers[_dragStartEvent] = _onDragStart;
                     _globalEventHandlers[_dragMoveEvent] = _onDragMove;
@@ -2512,7 +2513,7 @@
  * If you're not planning to use transition for gallery at all,
  * you may set options hideAnimationDuration and showAnimationDuration to 0,
  * and just delete startAnimation function.
- * 
+ *
  */
 
 
@@ -2528,7 +2529,7 @@
 
                 // dimensions of small thumbnail {x:,y:,w:}.
                 // Height is optional, as calculated based on large image.
-                var thumbBounds; 
+                var thumbBounds;
                 if(item.initialLayout) {
                     thumbBounds = item.initialLayout;
                     item.initialLayout = null;
@@ -2623,8 +2624,8 @@
                         if(!out) {
 
                             // "in" animation always uses CSS transitions (instead of rAF).
-                            // CSS transition work faster here, 
-                            // as developer may also want to animate other things, 
+                            // CSS transition work faster here,
+                            // as developer may also want to animate other things,
                             // like ui on top of sliding area, which can be animated just via CSS
 
                             _currZoomLevel = item.initialZoomLevel;
@@ -2692,7 +2693,7 @@
         /**
 *
 * Controller manages gallery items, their dimensions, and their content.
-* 
+*
 */
 
         var _items,
@@ -2716,8 +2717,8 @@
             _initialIsLoop,
             _getZeroBounds = function() {
                 return {
-                    center:{x:0,y:0}, 
-                    max:{x:0,y:0}, 
+                    center:{x:0,y:0},
+                    max:{x:0,y:0},
                     min:{x:0,y:0}
                 };
             },
@@ -2729,12 +2730,12 @@
                 bounds.center.y = Math.round((_tempPanAreaSize.y - realPanElementH) / 2) + item.vGap.top;
 
                 // maximum pan position
-                bounds.max.x = (realPanElementW > _tempPanAreaSize.x) ? 
-                    Math.round(_tempPanAreaSize.x - realPanElementW) : 
+                bounds.max.x = (realPanElementW > _tempPanAreaSize.x) ?
+                    Math.round(_tempPanAreaSize.x - realPanElementW) :
                 bounds.center.x;
 
-                bounds.max.y = (realPanElementH > _tempPanAreaSize.y) ? 
-                    Math.round(_tempPanAreaSize.y - realPanElementH) + item.vGap.top : 
+                bounds.max.y = (realPanElementH > _tempPanAreaSize.y) ?
+                    Math.round(_tempPanAreaSize.y - realPanElementH) + item.vGap.top :
                 bounds.center.y;
 
                 // minimum pan position
@@ -2781,7 +2782,7 @@
 
                         if(!item.bounds) {
                             // reuse bounds object
-                            item.bounds = _getZeroBounds(); 
+                            item.bounds = _getZeroBounds();
                         }
                     }
 
@@ -2858,7 +2859,7 @@
                 img.onerror = function() {
                     item.loadError = true;
                     onComplete();
-                };		
+                };
 
                 img.src = item.src;// + '?a=' + Math.random();
 
@@ -2903,6 +2904,7 @@
 
                     for(var i = 0; i < _imagesToAppendPool.length; i++) {
                         poolItem = _imagesToAppendPool[i];
+                        console.log(poolItem);
                         if( poolItem.holder.index === poolItem.index ) {
                             _appendImage(poolItem.index, poolItem.item, poolItem.baseDiv, poolItem.img, false, poolItem.clearPlaceholder);
                         }
@@ -2920,6 +2922,7 @@
                 lazyLoadItem: function(index) {
                     index = _getLoopedId(index);
                     var item = _getItemAt(index);
+                    console.log(_items);
 
                     if(!item || ((item.loaded || item.loading) && !_itemsNeedUpdate)) {
                         return;
@@ -2934,6 +2937,7 @@
                     _preloadImage(item);
                 },
                 initController: function() {
+                  console.log("init controller");
                     framework.extend(_options, _controllerDefaultOptions, true);
                     self.items = _items = items;
                     _getItemAt = self.getItemAt;
@@ -2978,7 +2982,7 @@
                             item = _items[i];
                             // remove reference to DOM elements, for GC
                             if(item.container) {
-                                item.container = null; 
+                                item.container = null;
                             }
                             if(item.placeholder) {
                                 item.placeholder = null;
@@ -3006,17 +3010,17 @@
                 },
 
                 allowProgressiveImg: function() {
-                    // 1. Progressive image loading isn't working on webkit/blink 
+                    // 1. Progressive image loading isn't working on webkit/blink
                     //    when hw-acceleration (e.g. translateZ) is applied to IMG element.
                     //    That's why in PhotoSwipe parent element gets zoom transform, not image itself.
-                    //    
+                    //
                     // 2. Progressive image loading sometimes blinks in webkit/blink when applying animation to parent element.
                     //    That's why it's disabled on touch devices (mainly because of swipe transition)
-                    //    
+                    //
                     // 3. Progressive image loading sometimes doesn't work in IE (up to 11).
 
                     // Don't allow progressive loading on non-large touch devices
-                    return _options.forceProgressiveLoading || !_likelyTouchDevice || _options.mouseUsed || screen.width > 1200; 
+                    return _options.forceProgressiveLoading || !_likelyTouchDevice || _options.mouseUsed || screen.width > 1200;
                     // 1200 - to eliminate touch devices with large screen (like Chromebook Pixel)
                 },
 
@@ -3046,7 +3050,7 @@
                     holder.item = item;
 
                     // base container DIV is created only once for each of 3 holders
-                    var baseDiv = item.container = framework.createEl('pswp__zoom-wrap'); 
+                    var baseDiv = item.container = framework.createEl('pswp__zoom-wrap');
 
 
 
@@ -3114,7 +3118,7 @@
 
                         if(framework.features.transform) {
 
-                            var placeholderClassName = 'pswp__img pswp__img--placeholder'; 
+                            var placeholderClassName = 'pswp__img pswp__img--placeholder';
                             placeholderClassName += (item.msrc ? '' : ' pswp__img--placeholder--blank');
 
                             var placeholder = framework.createEl(placeholderClassName, item.msrc ? 'img' : '');
@@ -3141,10 +3145,10 @@
                             // just append image
                             if(!_initialContentSet && _features.transform) {
                                 _imagesToAppendPool.push({
-                                    item:item, 
-                                    baseDiv:baseDiv, 
-                                    img:item.img, 
-                                    index:index, 
+                                    item:item,
+                                    baseDiv:baseDiv,
+                                    img:item.img,
+                                    index:index,
                                     holder:holder
                                 });
                             } else {
@@ -3190,17 +3194,17 @@
  * tap.js:
  *
  * Displatches tap and double-tap events.
- * 
+ *
  */
 
         var tapTimer,
             tapReleasePoint = {},
-            _dispatchTapEvent = function(origEvent, releasePoint, pointerType) {		
+            _dispatchTapEvent = function(origEvent, releasePoint, pointerType) {
                 var e = document.createEvent( 'CustomEvent' ),
                     eDetail = {
-                        origEvent:origEvent, 
-                        target:origEvent.target, 
-                        releasePoint: releasePoint, 
+                        origEvent:origEvent,
+                        target:origEvent.target,
+                        releasePoint: releasePoint,
                         pointerType:pointerType || 'touch'
                     };
 
@@ -3276,7 +3280,7 @@
  * - Manages "dragging", "zoomed-in", "zoom-out" classes.
  *   (which are used for cursors and zoom icon)
  * - Adds toggleDesktopZoom function.
- * 
+ *
  */
 
         var _wheelDelta;
@@ -3448,12 +3452,12 @@
  * history.js:
  *
  * - Back button to close gallery.
- * 
+ *
  * - Unique URL for each slide: example.com/&pid=1&gid=3
  *   (where PID is picture index, and GID and gallery index)
- *   
+ *
  * - Switch URL when slides change.
- * 
+ *
  */
 
 
@@ -3505,7 +3509,7 @@
                     if(!vars[i]) {
                         continue;
                     }
-                    var pair = vars[i].split('=');	
+                    var pair = vars[i].split('=');
                     if(pair.length < 2) {
                         continue;
                     }
@@ -3707,7 +3711,7 @@
                 },
                 updateURL: function() {
 
-                    // Delay the update of URL, to avoid lag during transition, 
+                    // Delay the update of URL, to avoid lag during transition,
                     // and to not to trigger actions like "refresh page sound" or "blinking favicon" to often
 
                     _cleanHistoryTimeouts();

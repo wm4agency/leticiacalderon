@@ -34,12 +34,10 @@ section#hero{
       }
 
       @media (min-width: $large){
-        //height: 80%;
-        //height: 80vh;
         background-attachment: fixed;
         background-size: auto 70%;
         background-position: bottom right;
-        background-position: bottom 17vh right 47%;
+        background-position: bottom 17vh left 25%;
         background-image:  url(../assets/images/LeticiaCalderon_main_dkt.png);
       }
     }
@@ -50,6 +48,14 @@ section#hero{
       top:10%;
       left: 50%;
       transform: translateX(-50%);
+      @include fadeInLeft();
+
+      @media (min-width: $large){
+        font-size: 1.75rem;
+        right: 5rem;
+        left: unset;
+        transform: none;
+      }
     }
 
     p.slogan{
@@ -62,6 +68,7 @@ section#hero{
       color: $lc_grey;
       font-size: 1.5em;
       line-height: .65em;
+      @include fadeInLeft();
 
       strong{
         display: block;
@@ -72,6 +79,10 @@ section#hero{
           vertical-align: sub;
           line-height: 1.25em;
         }
+      }
+      @media(min-width: $large){
+        font-size: 5rem;
+        bottom: 25%;
       }
     }
 
@@ -84,6 +95,13 @@ section#hero{
       right: 15px;
       margin: 0;
       padding: 0;
+      @include fadeInLeft();
+
+      @media(min-width: $large){
+        font-size: 1.25em;
+        right: 5rem;
+        bottom: 5%;
+      }
     }
 
   }

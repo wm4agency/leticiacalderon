@@ -36,7 +36,7 @@ function delegateEvents(){
     //port touch events to click events
     document.addEventListener('touchend', function(e) {
       /* prevent delay and simulated mouse events */
-      console.log(e);
+      //console.log(e);
 
       if (e.classList.contains( "m-nav-toggler" ) ){
         e.stopPropagation();
@@ -49,7 +49,7 @@ function delegateEvents(){
     document.addEventListener('click', function (event) {
         var e = event.target;
         //e.preventDefault
-        console.log(e);
+        //console.log(e);
 
         if (e.classList.contains( "m-nav-toggler" ) ) { // botones en formas de contacto
             e.preventDefault;
@@ -277,10 +277,12 @@ function galleryInit(){
               if(typeof mediaFiles != 'undefined' || mediaFiles != null){
                 photoswipe_GalleryBuilder(mediaFiles,'galeria-DOM');
               }
-              /*
+
               if(typeof mediaFolders != 'undefined' || mediaFolders != null){
-                var mediaFolder;
-                for(i=0; i<mediaFolders.length; i++ ){
+                var mediaFolder,
+                    files=[];
+                var i = 0;
+                while(i<mediaFolders.length){
                   mediaFolder = mediaFolders[i];
 
                   $.ajax({
@@ -290,21 +292,24 @@ function galleryInit(){
                           throw "galleryInit ajax failed, callback function not initiated";
                       },
                       dataType: 'json',
-                      //timeout: 30000,
+                      async:false,
+                      // timeout: 300000,
                       success: function(newgalleryItems) {
                           if(typeof newgalleryItems === 'undefined' || newgalleryItems === null){
                               throw "no diritems returned, callback not initiated";
                           }
-                          var Files = newgalleryItems.mediaFiles;
-                          var Folders = newgalleryItems.mediaFolders;
-                          mediaFolder.mediaFiles=Files;
-                          console.log(mediaFolder);
+                          files = newgalleryItems.mediaFiles;
+
                       },
                       type: 'GET'
                   });
+                  mediaFolder.mediaFiles=files;
+                  photoswipe_NestedGalleryBuilder(mediaFolder.name,files, 'pswpGal')
+                  //console.log(mediaFolder);
+                  i++
                 }
               }
-              */
+
 
           }catch(e){
               throw (e);
@@ -358,7 +363,7 @@ function photoSwipeFromDIR(datareferer,diritems){
         switch (pic.type){
             case "image":
                 item = {
-                    src     :   pic.dir,
+                    src     :   "assets/images/"+pic.dir,
                     w       :   pic.width,
                     h       :   pic.height,
                     title   :   pic.title,
@@ -450,7 +455,7 @@ function getMediaItems(datareferer,sourcedir){
 }
 
 function photoswipe_GalleryBuilder(images, parentID) {
-    console.log(images);
+    //console.log(images);
     var container = document.getElementById(parentID);
     if(!container || container == null) return;
 
@@ -479,7 +484,9 @@ function photoswipe_GalleryBuilder(images, parentID) {
         var newFigInt = document.createElement("figure");
 
         newFigInt.setAttribute("style","background-image:url(assets/images/"+images[i].dir+")");
+        newFigInt.setAttribute("data-src","assets/images/"+images[i].dir);
         newFigInt.setAttribute("itemprop", "thumbnail");
+        newFigInt.setAttribute("class", "thumb");
 
 
 
@@ -495,6 +502,59 @@ function photoswipe_GalleryBuilder(images, parentID) {
         container.appendChild(newFig);
     }
     photoSwipeFromDOM(".galeria-DOM");
+}
+
+function photoswipe_NestedGalleryBuilder(galleryName,images, parentID) {
+    //console.log(images);
+    var container = document.getElementById(parentID);
+    if(!container || container == null) return;
+
+    //For each poster image,
+    var posterImage =images[0];
+    var imageName = galleryName;
+    var path=encodeURI(posterImage.dir);
+    //var imgDims=(images[i].substring(images[i].lastIndexOf("dims-")+5,images[i].lastIndexOf("."))).replace(/\s/g,'');
+
+    //        console.log("imageName = "+imageName + " | path = "+path + " | dims = "+imgDims);
+
+    //Make a new image element, setting the source to the source in the array
+    var newFig = document.createElement("figure");
+    newFig.setAttribute("class", "swipe_element");
+    newFig.setAttribute("itemprop", "associatedMedia");
+    newFig.setAttribute("itemscope", "");
+    newFig.setAttribute("itemtype","http://schema.org/ImageObject");
+    //        console.log(newFig);
+
+    var newAnchor = document.createElement("a");
+    newAnchor.setAttribute("href", "assets/images/"+path);
+    newAnchor.setAttribute("itemprop", "contentUrl");
+    newAnchor.setAttribute("data-size", posterImage.width+'x'+posterImage.height);
+
+
+    var newFigInt = document.createElement("figure");
+
+    newFigInt.setAttribute("style","background-image:url(assets/images/"+path+")");
+    newFigInt.setAttribute("data-src","assets/images/"+path);
+    newFigInt.setAttribute("itemprop", "thumbnail");
+    newFigInt.setAttribute("class", "thumb");
+
+
+
+    //        var captionText = imageName.substring(0, imageName.lastIndexOf("."));
+    var captionText = imageName;
+    var newCaption = document.createElement("figcaption");
+    newCaption.setAttribute("itemprop", "caption description");
+
+    var newText = document.createElement("p");
+    newText.innerHTML= captionText;
+
+    newCaption.appendChild(newText)
+    newFigInt.appendChild(newCaption);
+    newAnchor.appendChild(newFigInt);
+    newFig.appendChild(newAnchor);
+    container.appendChild(newFig);
+
+    photoSwipeFromDIR(newFig,images)
 }
 
 function photoSwipeFromDOM(gallerySelector){
@@ -539,7 +599,8 @@ function photoSwipeFromDOM(gallerySelector){
 
             if(linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
+                item.msrc = linkEl.children[0].getAttribute('data-src');
+                console.log(item.msrc);
             }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
@@ -643,7 +704,7 @@ function photoSwipeFromDOM(gallerySelector){
 
             getThumbBoundsFn: function(index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                var thumbnail = items[index].el.getElementsByTagName('figure')[0], // find thumbnail
                     pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
                     rect = thumbnail.getBoundingClientRect();
 

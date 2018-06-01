@@ -19,4 +19,12 @@ section#decalogo{
     li{line-height: 1.75rem}
     strong{color: $w;font-weight: 400;}
   }
+
+  @media(min-width:$large){
+    .container{width: 50%;}
+    ol li{
+      font-size: 1.5rem;
+      line-height: 1.75rem
+    }
+  }
 }

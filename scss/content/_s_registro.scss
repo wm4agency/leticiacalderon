@@ -1,0 +1,36 @@
+section#registro{
+  h4{
+    text-align: center;
+    font-weight: 500;
+    color: $lc_red;
+  }
+  @media(min-width: $large){
+    width: 65%;
+    float: left;
+    margin: 3em 0;
+
+    h4{font-family: $helvetica;}
+    .calderon{
+      font-size: 1.5rem;
+    }
+
+    legend{
+      background-color: $silver;
+      font-weight: normal;
+      padding: 1em;
+    }
+    h5{
+      display: inline-block;
+      width: 45%;
+      color: $dark;
+      text-align: right;
+      font-size: 4rem;
+      padding: 1rem;
+      margin: 0 auto;
+      &+p{
+        width: 50%;
+        display: inline-block;
+      }
+    }
+  }
+}

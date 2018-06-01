@@ -1,5 +1,5 @@
 <article class="container">
-  <h1>Compromisos</h1>
+  <h1>Ejes y compromisos de Gobierno</h1>
   <ol>
     <li>
       <article class="accordion">

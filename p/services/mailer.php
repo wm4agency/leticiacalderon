@@ -33,6 +33,7 @@ $headers .= 'From: leticiacalderon.info<no-reply@leticiacalderon.info>'. "\r\n";
 
 //plantilla de correo de acuerdo al tipo de forma registrado
 switch($cat){
+    /*
     case "buzon":
         $to = "=?UTF-8?B?".base64_encode('Contacto Ciudadano')."?=".'<contacto@leticiacalderon.info>';
         $recipients = "oscar@wm4.mx,mmonroy.lan@gmail.com,pepemolinatorres@gmail.com,grubicamargo@gmail.com";
@@ -58,13 +59,10 @@ switch($cat){
         }
         else{
             echo "<div class='error_message'>Hemos tenido algún problema con tu envío, por favor intenta nuevamente"."</div>\r\n";
-            /*echo "to: ".$to."\r\n";
-            echo "subject: ".$subject."\r\n";
-            echo "message: ".$message."\r\n";
-            echo "headers: ".$headers."\r\n";*/
             die();
         }
         break;
+    */
     case "registro":
         $to = "=?UTF-8?B?".base64_encode('Equipo Leticia Calderón')."?=".'<contacto@leticiacalderon.info>';
         $recipients = "oscar@wm4.mx,mmonroy.lan@gmail.com,pepemolinatorres@gmail.com,grubicamargo@gmail.com";

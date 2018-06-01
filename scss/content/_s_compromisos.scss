@@ -69,4 +69,27 @@ section#compromisos{
       }
     }
   }
+  @media(min-width:$large){
+    .container{width: 50%;}
+    ol>li {
+      &:before{
+        &:hover{cursor: pointer;}
+      }
+      article{
+        h2{
+          font-size: 2rem;
+          &:hover{cursor: pointer;}
+        }
+        ul{
+          height: 30em;
+          margin-left: 1.5em;
+        }
+        li{
+          font-size: 1.5em;
+          line-height: 1.125em;
+          margin-left: 1em;
+        }
+      }
+    }
+  }
 }

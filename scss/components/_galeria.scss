@@ -11,13 +11,35 @@ div.galeria{
     float: left;
     overflow: hidden;
 
-    figure{
+    .thumb{
       width: 100%;
       height: 100%;
       background-size: cover;
       position: absolute;
       margin: 0;
       padding: 0;
+
+      figcaption{
+        background: transparentize($lc_red, .3);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      p{
+        color: $w;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-transform: uppercase;
+      }
+    }
+  }
+  @media(min-width: $large){
+    figure.swipe_element{
+      width: 25%;
+      &:hover{ cursor: pointer;}
     }
   }
 }

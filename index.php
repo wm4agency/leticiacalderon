@@ -8,7 +8,7 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
 
 <aside id="slidding_menu">  <?php include_once "p/components/nav.php"; ?>
 </aside>
-<div id="panel">
+<div id="panel" class="">
   <i class="burger m-nav-toggler"></i>
   <main>
     <section id="hero">
@@ -27,7 +27,7 @@ if (! include_once "p/partials/head.php"){echo "no head found";die();}
       <?php include_once "p/partials/s_decalogo.php"; ?>
     </section>
     <section id="galeria">
-      <div id="galeria-DOM" class="galeria"></div>
+      <div id="galeria-DOM" class="galeria galeria-DOM"></div>
       <div id="pswpGal" class="galeria"></div>
     </section>
     <section id="audios">

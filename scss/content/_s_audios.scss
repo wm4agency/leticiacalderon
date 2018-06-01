@@ -1,3 +1,11 @@
 section#audios{
   padding: 3em 0;
+
+  @media(min-width: $large){
+    width: 35%;
+    float: left;
+    margin:0;
+    background-color: #ccc;
+    padding: 6em 0;
+  }
 }

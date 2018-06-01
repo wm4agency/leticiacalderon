@@ -21,12 +21,12 @@
       </ul>
     </li>
     <li>
-      <h2>Academia</h2>
+      <h2>Preparación Académica</h2>
       <ul>
+        <li>Contaduría Pública. Escuela Superior de Comercio y Administración, IPN.</li>
         <li>Maestría en Responsabilidad Social. Universidad Anáhuac Norte.</li>
         <li>Seminario Ejecutivo de Liderazgo y Gobernanza, “Construyendo Viabilidad Política”.The George Washington University.</li>
         <li>Taller de Gerencia Política de Proyectos de Cambio. The George Washington University.</li>
-        <li>Contaduría Pública. Escuela Superior de Comercio y Administración, IPN.</li>
       </ul>
     </li>
   </ul>

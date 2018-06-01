@@ -5,7 +5,6 @@
 <form class="sign-in">
   <fieldset>
     <legend>
-      <i class="fas fa-bullhorn"></i>
       <h5>¡Participa!</h5>
       <p>
         <strong>Regístrate como simpatizante</strong> y colabora difundiendo su proyecto para un buen gobierno y un mejor Valle de Chalco Solidaridad.</p>
@@ -54,6 +53,6 @@
       <option>Santiago</option>
     </select>
     <button type="submit" name="send" value="enviar" class="send">enviar</button>
-    <input type="hidden" id="cat" name="cat" value="registrarse">
+    <input type="hidden" id="cat" name="cat" value="registro">
   </fieldset>
 </form>
