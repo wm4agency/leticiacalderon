@@ -44,10 +44,9 @@ section#hero{
 
     .calderon{
       font-size: .95rem;
-      position: absolute;
-      top:10%;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      top: 10%;
+      margin: 0 auto;
       @include fadeInLeft();
 
       @media (min-width: $large){
